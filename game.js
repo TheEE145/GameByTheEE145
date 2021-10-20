@@ -62,7 +62,7 @@ document.querySelector(".button2").addEventListener("click", function() {
                 consoleWrite("console: you don`t have enough wood!"); 
             }; break; 
         };
-        //to craft showel
+        //to craft shovel
         case `shovel`: { 
             if(wood >= 20 && inventory.has("shovel") == false) {
                 wood -= 20; statUpgate(); inventory.add("shovel"); consoleWrite("console: you crafted shovel!");
