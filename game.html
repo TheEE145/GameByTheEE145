@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>game by TheEE145 - play!</title>
+        <style>
+            .body { padding: 0; background: darkgray; }
+            .header--first { padding-left: 15%; padding-right: 10%;}
+            .header--second { padding-right: 25%; padding-left: 10% }
+            .header--third { padding-right: 10%; display: inline; }
+            .header { position: fixed; top: 0; right: 0; left: 0; background: black; height: 30px; color: white; }
+            .header--text { color: white; text-decoration: none; }
+            .header--text:hover { color: lightgray; text-decoration: underline; }
+            .content { padding-left: 10%; padding-right: 10%; }
+            .game { width: 1200px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; padding-top: 2%; background-color: white; }
+            .opaZero { opacity: 0; }
+        </style>
+    </head>
+    <body class="body">
+        <nav class="header">
+            <a href="/pages/game.html" class="header--first header--text">play</a>
+            <a class="header--second header--text">comming soon!</a>
+            <h1 class="header--third">game by TheEE145</h1>
+        </nav>
+        <content class="content">
+            <div class="game">
+                <div>
+                    <label for="action">action:</label>
+                    <input class="action-input" name="action-input" placeholder="action">
+                    <button class="action-control button1">execute</button>
+                </div>
+                <div>
+                    <br>
+                    <label for="craft">craft:</label>
+                    <input class="craft-input" name="craft-input" placeholder="item">
+                    <button class="craft-control button2">execute</button>
+                </div>
+                <div>
+                    <br>
+                    <label for="plase">go to:</label>
+                    <input class="xPlase" name="xPlase" placeholder="location">
+                    <button class="plase-control button3">execute</button>
+                </div>
+                <br>
+                <div class="console">console: </div>
+                <div class="statistics">statistics: </div>
+                <hr>
+                <p>options:</p>
+                <div>
+                    <label for="hover-color">button hover color:</label>
+                    <input type="color" name="hover-color" id="hover-color" value="#FFFFFF">
+                    <a class="opaZero">...</a>
+                    <label for="default-color">button dafult color:</label>
+                    <input type="color" name="default-color" id="default-color" value="#EFEDED">
+                </div>
+                <br>
+            </div>
+        </content>
+        <script src="./game.js"></script>
+        <script>
+            document.querySelector(".button1").addEventListener("mouseenter", function() {
+                document.querySelector(".button1").style.backgroundColor = document.querySelector(`[name='hover-color']`).value; });
+            document.querySelector(".button1").addEventListener("mouseleave", function() {
+                document.querySelector(".button1").style.backgroundColor = document.querySelector(`[name='default-color']`).value; });
+
+            document.querySelector(".button2").addEventListener("mouseenter", function() {
+                document.querySelector(".button2").style.backgroundColor = document.querySelector(`[name='hover-color']`).value; });
+            document.querySelector(".button2").addEventListener("mouseleave", function() {
+                document.querySelector(".button2").style.backgroundColor = document.querySelector(`[name='default-color']`).value; });
+
+            document.querySelector(".button3").addEventListener("mouseenter", function() {
+                document.querySelector(".button3").style.backgroundColor = document.querySelector(`[name='hover-color']`).value; });
+            document.querySelector(".button3").addEventListener("mouseleave", function() {
+                document.querySelector(".button3").style.backgroundColor = document.querySelector(`[name='default-color']`).value; });
+        </script>
+    </body>
+</html>
