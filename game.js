@@ -63,11 +63,11 @@ document.querySelector(".button2").addEventListener("click", function() {
             }; break; 
         };
         //to craft showel
-        case `showel`: { 
-            if(wood >= 20 && inventory.has("showel") == false) {
-                wood -= 20; statUpgate(); inventory.add("showel"); consoleWrite("console: you crafted showel!");
-            } else if(wood >= 20 && inventory.has("showel") == true) { 
-                consoleWrite("you already have a showel!"); 
+        case `shovel`: { 
+            if(wood >= 20 && inventory.has("shovel") == false) {
+                wood -= 20; statUpgate(); inventory.add("shovel"); consoleWrite("console: you crafted shovel!");
+            } else if(wood >= 20 && inventory.has("shovel") == true) { 
+                consoleWrite("you already have a shovel!"); 
             } else {
                 consoleWrite("console: you don`t have enough wood!"); 
             }; break; 
@@ -78,7 +78,7 @@ document.querySelector(".button2").addEventListener("click", function() {
         } else if(wood >= 10 && stone >= 10 && inventory.has("sword") == true) { consoleWrite("you already have a sword!"); } else {
             consoleWrite("console: you don`t have enough wood or stone!"); }; break; };
         //if craft not found
-        default: { document.querySelector(".console").innerHTML = `console: items list -> showel, sword, pickaxe.`; }
+        default: { document.querySelector(".console").innerHTML = `console: items list -> shovel, sword, pickaxe.`; }
     };
 });
 
@@ -88,20 +88,20 @@ document.querySelector(".button3").addEventListener("click", function() {
     switch(xPlace) {
         //to go forest
         case `forest`: { 
-            if(plase.has("underground") == true && inventory.has("showel") == true) { 
+            if(plase.has("underground") == true && inventory.has("shovel") == true) { 
                 mapChange(plases[0], plase);
                 consoleWrite(`you have been moved to ${plases[0]}`); 
             } else { 
-                consoleWrite("you don`t have showel or you are in forest!");
+                consoleWrite("you don`t have shovel or you are in forest!");
             }; break;
         };
         //to go underground
         case `underground`: { 
-            if(plase.has("forest") == true && inventory.has("showel") == true) { 
+            if(plase.has("forest") == true && inventory.has("shovel") == true) { 
                 mapChange(plases[1], plase);
                 consoleWrite(`you have been moved to ${plases[1]}`); 
             } else { 
-                consoleWrite("you don`t have showel or you are in underground!");
+                consoleWrite("you don`t have shovel or you are in underground!");
             }; break;
         };
         //if plase not found
