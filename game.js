@@ -11,11 +11,7 @@ function statUpgate() { document.querySelector(".statistics").innerHTML = `stati
 function consoleWrite(text) { document.querySelector(".console").innerHTML = text; }
 
 //setup stage 3
-function random(min, max) { 
-    const random = (min, max) => { 
-        return Math.floor(Math.random() * (max - min + 1)) + min; 
-    }; return random(min, max); 
-};
+const random = (min, max) => { return Math.floor(Math.random() * (max - min + 1)) + min; }; return random(min, max);
 statUpgate();
 
 //code action
