@@ -66,12 +66,12 @@ document.querySelector(".button2").addEventListener("click", function() {
                 consoleWrite("console: you don`t have enough wood!"); 
             }; break; 
         };
-        //to craft showel
-        case `showel`: { 
-            if(wood >= 20 && inventory.has("showel") == false) {
-                wood -= 20; statUpgate(); inventory.add("showel"); consoleWrite("console: you crafted showel!");
-            } else if(wood >= 20 && inventory.has("showel") == true) { 
-                consoleWrite("you already have a showel!"); 
+        //to craft shovel
+        case `shovel`: { 
+            if(wood >= 20 && inventory.has("shovel") == false) {
+                wood -= 20; statUpgate(); inventory.add("shovel"); consoleWrite("console: you crafted shovel!");
+            } else if(wood >= 20 && inventory.has("shovel") == true) { 
+                consoleWrite("you already have a shovel!"); 
             } else {
                 consoleWrite("console: you don`t have enough wood!"); 
             }; break; 
@@ -82,7 +82,7 @@ document.querySelector(".button2").addEventListener("click", function() {
         } else if(wood >= 10 && stone >= 10 && inventory.has("sword") == true) { consoleWrite("you already have a sword!"); } else {
             consoleWrite("console: you don`t have enough wood or stone!"); }; break; };
         //if craft not found
-        default: { document.querySelector(".console").innerHTML = `console: items list -> showel, sword, pickaxe.`; }
+        default: { document.querySelector(".console").innerHTML = `console: items list -> shovel, sword, pickaxe.`; }
     };
 });
 
