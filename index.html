@@ -13,6 +13,9 @@
             .content { padding-left: 10%; padding-right: 10%; }
             .game { width: 1200px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; padding-top: 2%; background-color: white; }
             .opaZero { opacity: 0; }
+            .wrapper { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+            .achievement { border: thick double black; background-color: #EFEDED; padding-top: 5%; padding-bottom: 5%; text-align: center; }
+            .achievement-text { border: thick double black; background-color: white; display: block; display: inline-block; width: 50%; };
         </style>
     </head>
     <body class="body">
@@ -44,6 +47,14 @@
                 <div class="console">console: </div>
                 <div class="statistics">statistics: </div>
                 <hr>
+                <p>shop:</p>
+                <div>
+                    <label for="sell-input">sell: </label>
+                    <input class="sell-input" name="sell-input" placeholder="material">
+                    <button class="sell-control button4">execute</button>
+                </div>
+                <div class="console2">console: </div>
+                <hr>
                 <p>options:</p>
                 <div>
                     <label for="hover-color">button hover color:</label>
@@ -52,7 +63,7 @@
                     <label for="default-color">button dafult color:</label>
                     <input type="color" name="default-color" id="default-color" value="#EFEDED">
                 </div>
-                <br>
+                <hr>
             </div>
         </content>
         <script src="./game.js"></script>
@@ -71,6 +82,11 @@
                 document.querySelector(".button3").style.backgroundColor = document.querySelector(`[name='hover-color']`).value; });
             document.querySelector(".button3").addEventListener("mouseleave", function() {
                 document.querySelector(".button3").style.backgroundColor = document.querySelector(`[name='default-color']`).value; });
+            
+            document.querySelector(".button4").addEventListener("mouseenter", function() {
+                document.querySelector(".button4").style.backgroundColor = document.querySelector(`[name='hover-color']`).value; });
+            document.querySelector(".button4").addEventListener("mouseleave", function() {
+                document.querySelector(".button4").style.backgroundColor = document.querySelector(`[name='default-color']`).value; });
         </script>
     </body>
 </html>
