@@ -108,4 +108,26 @@ document.querySelector(".button3").addEventListener("click", function() {
         default: { document.querySelector(".console").innerHTML = `console: locations list -> forest, underground.`; };
     }
 });
-/* this all code */
+
+//shop
+document.querySelector(".button4").addEventListener("click", function() {
+    var sell = document.querySelector(`[name='sell-input']`).value;
+    switch(sell) {
+        //1 wood = 1 coin
+        case `wood`: {
+            document.querySelector(".console2").innerHTML = `console: you sold ${wood} wood for ${wood} coins`;
+            money += wood; wood = 0; statUpgate(); break; };
+        
+        //1 stone = 2 coin
+        case `stone`: {
+            document.querySelector(".console2").innerHTML = `console: you sold ${stone} stone for ${stone * 2} coins`;
+            money += stone*2; stone = 0; statUpgate(); break; };
+        
+        //1 meat = 3 coin
+        case `meat`: {
+            document.querySelector(".console2").innerHTML = `console: you sold ${meat} stone for ${meat * 3} coins`;
+            money += meat*3; meat = 0; statUpgate(); break; };
+
+        default: { document.querySelector(".console2").innerHTML = `console: materials list -> wood, stone, meat.`; };
+    }
+});
