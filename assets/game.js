@@ -1,3 +1,5 @@
+$ = document.querySelector.bind(document)
+
 alert("welcome to the GameByTheEE145. you goal is make a super sword and kill boss. good luck!")
 let libraly = {
     inventory: new Set(),
@@ -96,7 +98,10 @@ let libraly = {
 libraly.location.locationNow = libraly.location.locationList[0]
 
 let statText = `statistic -> | wood: ${libraly.materials.wood.count} | stone: ${libraly.materials.stone.count} | food: ${libraly.materials.food.count} | gold: ${libraly.materials.gold.count} | crystal: ${libraly.materials.crystal.count} |`
-function consoletxt(text) { document.querySelector('.console').innerHTML = text }
+function consoletxt(text) {
+    $('.console').innerHTML = text
+    $('#consoleModal1').innerHTML = text
+}
 
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
@@ -115,59 +120,40 @@ background.onload = function(){
 background.src = "assets/img/grass.png";
 
 var logo = new Image();
-logo.addEventListener("load", function() { 
-    ctx.drawImage(logo, 5, 5, 90, 100); 
-}, false);
+logo.addEventListener("load", function() { ctx.drawImage(logo, 5, 5, 90, 100); }, false);
 logo.src = 'assets/img/icon.png';
 
 var statistiKaIgPU = new Image();
-statistiKaIgPU.addEventListener("load", function() { 
-    ctx.drawImage(statistiKaIgPU, 5, 395, 90, 100); 
-}, false);
+statistiKaIgPU.addEventListener("load", function() { ctx.drawImage(statistiKaIgPU, 5, 395, 90, 100); }, false);
 statistiKaIgPU.src = 'assets/img/statistic.png';
 
 var sellAll = new Image();   
-sellAll.addEventListener("load", function() {
-    ctx.drawImage(sellAll, 5, 275, 90, 100);
-}, false);
+sellAll.addEventListener("load", function() { ctx.drawImage(sellAll, 5, 275, 90, 100); }, false);
 sellAll.src = 'assets/img/sellAll.png';
 
 var tree = new Image();
-tree.addEventListener("load", function() {
-    ctx.drawImage(tree, 150, 5, 200, 200);
-}, false);
+tree.addEventListener("load", function() { ctx.drawImage(tree, 150, 5, 200, 200); }, false);
 tree.src = 'assets/img/tree.png';
 
 var stone = new Image();
-stone.addEventListener("load", function() {
-    ctx.drawImage(stone, 350, 5, 200, 200);
-}, false);
+stone.addEventListener("load", function() { ctx.drawImage(stone, 350, 5, 200, 200); }, false);
 stone.src = 'assets/img/stone.png';
 
 var bush = new Image();
-bush.addEventListener("load", function() {
-    ctx.drawImage(bush, 600, 5, 200, 200);
-}, false);
+bush.addEventListener("load", function() { ctx.drawImage(bush, 600, 5, 200, 200); }, false);
 bush.src = 'assets/img/bush.png';
 
 var crystal = new Image();
-crystal.addEventListener("load", function() {
-    ctx.drawImage(crystal, 850, 5, 200, 200);
-}, false);
+crystal.addEventListener("load", function() { ctx.drawImage(crystal, 850, 5, 200, 200); }, false);
 crystal.src = 'assets/img/crystal.png';
 
 var underground = new Image();
-underground.addEventListener("load", function() {
-    ctx.drawImage(underground, 850, 235, 200, 200);
-}, false);
+underground.addEventListener("load", function() { ctx.drawImage(underground, 850, 235, 200, 200); }, false);
 underground.src = 'assets/img/uderground.png';
 
 var forest = new Image();   
-forest.addEventListener("load", function() {
-    ctx.drawImage(forest, 600, 235, 200, 200);
-}, false);
+forest.addEventListener("load", function() { ctx.drawImage(forest, 600, 235, 200, 200); }, false);
 forest.src = 'assets/img/foret.png';
-
 
 function KursorPosition(ctx, mouse) {
     var object = ctx.getBoundingClientRect();
@@ -181,11 +167,11 @@ var KorsorPositiyaClicked = 0;
 function check() {
     if(KorsorPositiyaClicked == 1) {
         KorsorPositiyaClicked = 0;
-        document.querySelector(".commandLine").innerHTML = "";
+        $(".commandLine").innerHTML = "";
         console.log("-> close statistic [true]");
     } else if(KorsorPositiyaClicked == 0) { 
         KorsorPositiyaClicked = 1;
-        document.querySelector(".commandLine").innerHTML = statText;
+        $(".commandLine").innerHTML = statText;
         console.log("-> opening statistic [false]");
     } else { console.log(`FATAL ERROR --> KorsorPositiyaClicked == ${KorsorPositiyaClicked}`); }
 };
@@ -258,9 +244,7 @@ AnvilCtx.fillStyle = 'black';
 AnvilCtx.fillText("CRAFT MENU", 325, 25);
 
 var logoAnvil = new Image();
-logoAnvil.addEventListener("load", function() { 
-    AnvilCtx.drawImage(logoAnvil, 5, 5, 90, 100); 
-}, false);
+logoAnvil.addEventListener("load", function() { AnvilCtx.drawImage(logoAnvil, 5, 5, 90, 100); }, false);
 logoAnvil.src = 'assets/img/anvil.png';
 
 var floor = new Image();
@@ -284,39 +268,27 @@ slot.addEventListener("load", function() {
 slot.src = 'assets/img/slot.png';
 
 var axe = new Image();
-axe.addEventListener("load", function() { 
-    AnvilCtx.drawImage(axe, 120, 50, 100, 100); 
-}, false);
+axe.addEventListener("load", function() { AnvilCtx.drawImage(axe, 120, 50, 100, 100); }, false);
 axe.src = 'assets/img/items/axe.png';
 
 var sword = new Image();
-sword.addEventListener("load", function() { 
-    AnvilCtx.drawImage(sword, 120*2, 50, 100, 100); 
-}, false);
+sword.addEventListener("load", function() { AnvilCtx.drawImage(sword, 120*2, 50, 100, 100); }, false);
 sword.src = 'assets/img/items/sword.png';
 
 var shovel = new Image();
-shovel.addEventListener("load", function() { 
-    AnvilCtx.drawImage(shovel, 120*3, 50, 100, 100); 
-}, false);
+shovel.addEventListener("load", function() { AnvilCtx.drawImage(shovel, 120*3, 50, 100, 100); }, false);
 shovel.src = 'assets/img/items/shovel.png';
 
 var pickaxe = new Image();
-pickaxe.addEventListener("load", function() { 
-    AnvilCtx.drawImage(pickaxe, 120*4, 50, 100, 100); 
-}, false);
+pickaxe.addEventListener("load", function() { AnvilCtx.drawImage(pickaxe, 120*4, 50, 100, 100); }, false);
 pickaxe.src = 'assets/img/items/pickaxe.png';
 
 var megaPickaxe = new Image();
-megaPickaxe.addEventListener("load", function() { 
-    AnvilCtx.drawImage(megaPickaxe, 120*5, 50, 100, 100); 
-}, false);
+megaPickaxe.addEventListener("load", function() { AnvilCtx.drawImage(megaPickaxe, 120*5, 50, 100, 100); }, false);
 megaPickaxe.src = 'assets/img/items/megaPickaxe.png';
 
 var superSword = new Image();
-superSword.addEventListener("load", function() { 
-    AnvilCtx.drawImage(superSword, 120, 50*3+20, 100, 100); 
-}, false);
+superSword.addEventListener("load", function() { AnvilCtx.drawImage(superSword, 120, 50*3+20, 100, 100); }, false);
 superSword.src = 'assets/img/items/superSword.png';
 
 var notfound = new Image();
@@ -425,7 +397,7 @@ canvas.addEventListener("click", function(mouse) {
                 statText = `statistic -> | wood: ${libraly.materials.wood.count} | stone: ${libraly.materials.stone.count} | food: ${libraly.materials.food.count} | gold: ${libraly.materials.gold.count} | crystal: ${libraly.materials.crystal.count} |`
                 consoletxt(`you get 2 wood! now you have: ${libraly.materials.wood.count} wood!`)
                 if(KorsorPositiyaClicked == 1) { 
-                    document.querySelector(".commandLine").innerHTML = statText; 
+                    $(".commandLine").innerHTML = statText; 
                 } else { console.log(`${KorsorPositiyaClicked}`) }
             }   else if(libraly.inventory.has("axe") == false) {
                 consoletxt("console: you don`t have axe!");
@@ -445,7 +417,7 @@ canvas.addEventListener("click", function(mouse) {
                 statText = `statistic -> | stone: ${libraly.materials.wood.count} | stone: ${libraly.materials.stone.count} | food: ${libraly.materials.food.count} | gold: ${libraly.materials.gold.count} | crystal: ${libraly.materials.crystal.count} |`
                 consoletxt(`you get 2 stone! now you have: ${libraly.materials.stone.count} stone!`)
                 if(KorsorPositiyaClicked == 1) { 
-                    document.querySelector(".commandLine").innerHTML = statText; 
+                    $(".commandLine").innerHTML = statText; 
                 } else { console.log(`${KorsorPositiyaClicked}`) }
             }   else if(libraly.inventory.has("pickaxe") == false) {
                 consoletxt("console: you don`t have pickaxe!");
@@ -465,7 +437,7 @@ canvas.addEventListener("click", function(mouse) {
                 statText = `statistic -> | wood: ${libraly.materials.wood.count} | stone: ${libraly.materials.stone.count} | food: ${libraly.materials.food.count} | gold: ${libraly.materials.gold.count} | crystal: ${libraly.materials.crystal.count} |`
                 consoletxt(`you get 2 food! now you have: ${libraly.materials.food.count} food!`)
                 if(KorsorPositiyaClicked == 1) { 
-                    document.querySelector(".commandLine").innerHTML = statText; 
+                    $(".commandLine").innerHTML = statText; 
                 } else { console.log(`${KorsorPositiyaClicked}`) }
             }   else if(libraly.inventory.has("sword") == false) {
                 consoletxt("console: you don`t have sword!");
@@ -485,7 +457,7 @@ canvas.addEventListener("click", function(mouse) {
                 statText = `statistic -> | wood: ${libraly.materials.wood.count} | stone: ${libraly.materials.stone.count} | food: ${libraly.materials.food.count} | gold: ${libraly.materials.gold.count} | crystal: ${libraly.materials.crystal.count} |`
                 consoletxt(`you get 2 crystal! now you have: ${libraly.materials.crystal.count} crystal!`)
                 if(KorsorPositiyaClicked == 1) { 
-                    document.querySelector(".commandLine").innerHTML = statText; 
+                    $(".commandLine").innerHTML = statText; 
                 } else { console.log(`${KorsorPositiyaClicked}`) }
             }   else if(libraly.inventory.has("megaPickaxe") == false) {
                 consoletxt("console: you don`t have megaPickaxe!");
