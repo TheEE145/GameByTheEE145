@@ -113,3 +113,36 @@
 #craftCanvasManuForGame {
     border: 2px solid black;
 }
+
+.modal {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.modal-1[data-open="0"] {
+    display: none;
+}
+
+.modal-content {
+    width: 80%;
+    height: 80vh;
+    background: #FFFFFF;
+    overflow-x: auto;
+    margin: 10vh auto;
+    position: relative;
+}
+
+.close {
+    font-size: 32px;
+    position: absolute;
+    right: 8px;
+    cursor: pointer;
+}
+
+#consoleModal1 {
+    display: block;
+}
