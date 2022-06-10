@@ -1,52 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>game by TheEE145</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title class="title"></title>
+
         <link rel="shortcut icon" href="./icon.ico" type="image/x-icon">
-        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
-    <body class="body">
-        <header>
-            <nav class="header">
-                <a href="#" class="header--first header--text">play</a>
-                <a class="header--second header--text" href="https://github.com/TheEE145/GameByTheEE145">github</a>
-                <h1 class="header--third">game by TheEE145</h1>
-            </nav>
-        </header>
-        <content class="content">
-            <div class="game">
-                <canvas id="canvas" width="1150" height="500"></canvas>
-                <hr>
-                <div class="commandLine"></div>
-                <div class="console">console: </div>
-                <hr>
-                <button class="modal-btn1">open craft menu</button>
-                <div class="modal modal-1" data-open="0">
-                    <div class="modal-content">
-                        <span class="close close1">&times;</span>
-                        <canvas id="craftCanvasManuForGame" width="700" height="300"></canvas>
-                        <div class="console" id="consoleModal1">console: </div>
-                        <hr>
-                        <h1>Crafts menu</h1>
-                        <p>axe - 10 wood</p>
-                        <p>sword - 10 wood, 10 stone</p>
-                        <p>pickaxe - 10 wood</p>
-                        <p>shovel - 10 wood</p>
-                        <p>megaPickaxe - 50 wood, 50 stone, 50 food, 1000 gold</p>
-                        <p>sword - 100 wood, 100 stone, 100 food, 100000 gold, 100 crystal</p>
-                    </div>
-                </div>
-                <hr>
-                <div>
-                    <a class="a links" href="https://github.com/TheEE145/GameByTheEE145/wiki/%5BEN%5D-How-to-play">HOW TO PLAY GUIDE</a>
-                    <a class="a links" href="https://github.com/TheEE145/GameByTheEE145/releases">releases list</a>
-                </div>
-                <hr>
-                <img src="./assets/img/header.png">
-                <hr>
-            </div>
-        </content>
-        <script src="./assets/game.js"></script>
-        <script src="./assets/buttons.js"></script>
+    <body>
+        <canvas id="main"></canvas>
+
+        <input 
+            type="file" 
+            id="avatar" 
+            accept=".jpg, .jpeg, .png" 
+            multiple
+        >
     </body>
+
+    <script src="./scripts/setup.js"></script>
+
+    <script src="./scripts/content/baudles/bundle.js"></script>
+
+    <script src="./scripts/main.js"></script>
 </html>
