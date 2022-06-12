@@ -154,6 +154,11 @@ class Scene {
     };
 
     clickEvent() {
+        if(Game.mobile) {
+            mouse.x2 = 0;
+            mouse.y2 = 0;
+        };
+
         this.objects.forEach(e => {
             if((e.hover) && (e.onClick)) {
                 e.onClick();

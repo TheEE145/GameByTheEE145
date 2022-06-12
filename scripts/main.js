@@ -301,11 +301,6 @@ window.addEventListener('click', (e) => {
     };
 
     Game.currentScene.clickEvent();
-
-    if(Game.mobile) {
-        mouse.x2 = 0;
-        mouse.y2 = 0;
-    };
 }, false);
 
 document.getElementById('avatar').addEventListener('change', function() {
