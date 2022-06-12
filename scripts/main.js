@@ -32,10 +32,9 @@ function dataRenderer() {
                 )
             )
         );
-    } else {
-        saveData();
     };
 
+    saveData();
     console.log(localStorage.getItem('GameByTheEE145.player_data'));
 };
 
@@ -170,6 +169,10 @@ class Game {
 
             ctx.canvas.height = 700;
             ctx.canvas.width = 1400;
+
+            if((/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/).test(navigator.userAgent) ) {
+                Game.mobile = true;
+            };
         };
 
         static draw() {
@@ -275,6 +278,11 @@ window.addEventListener('keyup', (e) => {
 
 window.addEventListener('click', () => {
     Game.currentScene.clickEvent();
+
+    if(Game.mobile) {
+        mouse.x2 = 0;
+        mouse.y2 = 0;
+    };
 }, false);
 
 document.getElementById('avatar').addEventListener('change', function() {
