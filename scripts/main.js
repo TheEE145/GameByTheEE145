@@ -140,27 +140,10 @@ const changeLanguage = new UIbuilder.button(1200, 120+10, 200, 50, 'set language
 changeLanguage.onClick = function() {
     const number2l = prompt(currentBundle.newlanguage);
 
-    switch (Math.floor(number2l)) {
-        case 0:
-            player_data.player.lang = 'EN_eu';
-            break;
-    
-        case 1:
-            player_data.player.lang = 'RU_ru';
-            break;
-
-        case 2:
-            player_data.player.lang = 'UK_ua';
-            break;
-        
-        case 3:
-            player_data.player.lang = 'door';
-            break;
-
-        default:
-            alert(currentBundle.wrlanguage);
-            changeLanguage.onClick();
-            return;
+    if(bundles.hasOwnProperty(number2l)) {
+        player_data.player.lang = number2l;
+    } else {
+        alert(currentBundle.wrlanguage);
     };
 
     saveData();

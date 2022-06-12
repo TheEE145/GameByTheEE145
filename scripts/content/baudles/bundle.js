@@ -1,6 +1,6 @@
 const bundles = {};
 
-const language_change_languages = '\n0 - EN_eu\n1 - RU_ru\n2 - UK_ua\n3 - door';
+const language_change_languages = '\nEN_eu, RU_ru, UK_ua, door';
 bundles['EN_eu'] = {
     'money': 'Money',
     'power': 'Power',
