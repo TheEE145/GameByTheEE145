@@ -170,7 +170,7 @@ class Game {
             ctx.canvas.height = 700;
             ctx.canvas.width = 1400;
 
-            if((/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/).test(navigator.userAgent) ) {
+            if(window.matchMedia("only screen and (max-width: 760px)").matches) {
                 Game.mobile = true;
             };
         };
