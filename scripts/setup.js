@@ -17,12 +17,6 @@ function typeTest(variable, nClass) {
     throw new TypeError(`type of ${typeof variable} is not ${nClass.name}`);
 };
 
-Math.module = function(n) {
-    typeTest(n, Number);
-
-    return (n > 0) ? (n) : (-n);
-};
-
 Object.merge = function(o1, o2) {
     typeTest(o1, Object);
     typeTest(o2, Object);
@@ -231,47 +225,6 @@ class UIbuilder {
                 this.y + this.h/2 + this.fontSize/4, 
                 this.w - 5
             );
-        };
-    };
-
-    static checkbox = class extends CanvasRenderingObject {
-        checked = false;
-        
-        constructor(x, y, w, h) {
-            super(null, x, y, w, h);
-        };
-
-        draw() {
-            super.draw();
-
-            if(this.checked) {
-                ctx.drawImage(
-                    imgpack_interface.checkbox_checked, 
-                    
-                    this.x, 
-                    this.y, 
-                    this.w, 
-                    this.h
-                );
-            };
-        };
-
-        tick() {
-            if(this.hover) {
-                if(this.texture != imgpack_interface.checkbox_hover) {
-                    this.texture = imgpack_interface.checkbox_hover;
-                };
-
-                return;
-            };
-
-            if(this.texture != imgpack_interface.checkbox) {
-                this.texture = imgpack_interface.checkbox;
-            };
-        };
-
-        onClick() {
-            this.checked = !this.checked;
         };
     };
 };

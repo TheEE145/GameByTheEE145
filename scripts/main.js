@@ -33,7 +33,7 @@ function dataRenderer() {
             )
         );
     } else {
-        localStorage.setItem('GameByTheEE145.player_data', JSON.stringify(player_data));
+        saveData();
     };
 
     console.log(localStorage.getItem('GameByTheEE145.player_data'));
