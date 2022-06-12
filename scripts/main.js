@@ -178,6 +178,10 @@ class Game {
         static draw() {
             Game.currentScene.draw();
 
+            if(Game.mobile) {
+                return;
+            };
+
             if(mouse == null) {
                 return;
             };
@@ -226,16 +230,7 @@ class Game {
     };
 };
 
-Game.Core.run();
-setInterval(() => {
-    Game.Core.draw();
-    Game.currentScene.tick();
-}, 22);
-
-document.querySelector('#main').addEventListener('mousemove', (e) => {
-    mouse = e;
-    Game.Core.mousePOS();
-
+function hoverRenderer() {
     Game.currentScene.objects.forEach(block => {
         if(
             ((mouse.x2 > block.x) && (mouse.x2 < (block.x + block.w))) ||
@@ -252,7 +247,28 @@ document.querySelector('#main').addEventListener('mousemove', (e) => {
 
         block.hover = false;
     });
-}, false);
+};
+
+Game.Core.run();
+setInterval(() => {
+    Game.Core.draw();
+    Game.currentScene.tick();
+    
+    if(Game.mobile) {
+        try {
+            hoverRenderer();
+        } catch {};
+    };
+}, 22);
+
+if(!Game.mobile) {
+    document.querySelector('#main').addEventListener('mousemove', (e) => {
+        mouse = e;
+        Game.Core.mousePOS();
+    
+        hoverRenderer();
+    }, false);
+};
 
 const C = new FileReader();
 
@@ -276,7 +292,14 @@ window.addEventListener('keyup', (e) => {
     };
 }, false);
 
-window.addEventListener('click', () => {
+window.addEventListener('click', (e) => {
+    if(Game.mobile) {
+        mouse = e;
+        Game.Core.mousePOS();
+    
+        hoverRenderer();
+    };
+
     Game.currentScene.clickEvent();
 
     if(Game.mobile) {
